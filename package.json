@@ -1,0 +1,22 @@
+{
+  "name": "payment-package",
+  "version": "1.0.0",
+  "description": "Payment integration for stripe ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amanbora856/npm-payment-package.git"
+  },
+  "keywords": [
+    "payment"
+  ],
+  "author": "aman_bora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amanbora856/npm-payment-package/issues"
+  },
+  "homepage": "https://github.com/amanbora856/npm-payment-package#readme"
+}
