@@ -4,14 +4,21 @@
   "description": "Payment integration for stripe ",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amanbora856/npm-payment-package.git"
+    "url": "git+https://github.com/amanbora856/npm-payment.git"
+  },
+  "dependencies": {
+    "stripe": "^8.0.0"
   },
   "keywords": [
-    "payment"
+    "stripe",
+    "payment",
+    "integration",
+    "nodejs",
+    "payment-gateway"
   ],
   "author": "aman_bora",
   "license": "ISC",
