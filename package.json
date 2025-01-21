@@ -1,5 +1,5 @@
 {
-  "name": "payment-package",
+  "name": "aman-payment-package",
   "version": "1.0.0",
   "description": "Payment integration for stripe ",
   "main": "index.js",
