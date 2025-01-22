@@ -1,38 +1,47 @@
-Go Package: PaymentUtil
+# NPM Payment Package
 
-Overview
+## Overview
 
-npm-payment is a Go package designed to simplify payment gateway integration. It provides a common interface for interacting with multiple payment providers, such as Stripe, PayPal, and Razorpay. This package abstracts the complexities of individual payment APIs, allowing developers to focus on building their applications.
+`npm-payment-package` is a Go package designed to simplify payment gateway integration. It provides a common interface for interacting with multiple payment providers, such as Stripe, PayPal, and Razorpay. This package abstracts the complexities of individual payment APIs, allowing developers to focus on building their applications.
 
-Installation
+---
+
+## Installation
 
 To install the package, run:
 
-go get github.com/amanbora856/npm-payment
+```bash
+npm install @amanbora856/npm-payment-package
+```
 
+---
 
-Importing the Package
+## Importing the Package
 
-To use npm-payment, import it in your Go application:
+To use `npm-payment-package`, import it in your Go application:
 
-import "github.com/amanbora856/npm-payment"
+```go
+import "github.com/amanbora856/npm-payment-package"
+```
 
-Features
+---
 
-Unified Interface: Supports multiple payment providers with a consistent API.
+## Features
 
-Transaction Management: Create and verify transactions seamlessly.
+- **Unified Interface**: Supports multiple payment providers with a consistent API.
+- **Transaction Management**: Create and verify transactions seamlessly.
+- **Refunds**: Simplified handling of refunds.
+- **Custom Configurations**: Easily configure API keys and settings.
 
-Refunds: Simplified handling of refunds.
+---
 
-Custom Configurations: Easily configure API keys and settings.
+## Usage
 
-Usage
-
-1. Initialization
+### 1. Initialization
 
 Initialize the package with your payment provider credentials:
 
+```go
 config := paymentutil.Config{
     Provider: "stripe", // Supported: "stripe", "paypal", "razorpay"
     ApiKey:   "your-api-key",
@@ -43,9 +52,13 @@ client, err := paymentutil.NewClient(config)
 if err != nil {
     log.Fatalf("Error initializing payment client: %v", err)
 }
+```
 
-2. Creating a Payment
+---
 
+### 2. Creating a Payment
+
+```go
 payment := paymentutil.PaymentRequest{
     Amount:   5000, // in smallest currency unit (e.g., cents for USD)
     Currency: "USD",
@@ -60,9 +73,13 @@ if err != nil {
 }
 
 fmt.Printf("Payment created successfully: %v\n", response)
+```
 
-3. Verifying a Payment
+---
 
+### 3. Verifying a Payment
+
+```go
 paymentID := "payment-id-received"
 verified, err := client.VerifyPayment(paymentID)
 if err != nil {
@@ -74,9 +91,13 @@ if verified {
 } else {
     fmt.Println("Payment verification failed")
 }
+```
 
-4. Initiating a Refund
+---
 
+### 4. Initiating a Refund
+
+```go
 refund := paymentutil.RefundRequest{
     PaymentID: "payment-id",
     Amount:    2000, // Partial refund (optional)
@@ -88,43 +109,49 @@ if err != nil {
 }
 
 fmt.Printf("Refund initiated successfully: %v\n", response)
+```
 
-Testing
+---
+
+## Testing
 
 To run tests for this package:
 
+```bash
 go test ./...
+```
 
-Supported Providers
+---
 
-Provider
+## Supported Providers
 
-Features Supported
+| Provider | Features Supported              |
+| -------- | ------------------------------- |
+| Stripe   | Payments, Refunds, Metadata     |
+| PayPal   | Payments, Refunds               |
+| Razorpay | Payments, Refunds, Verification |
 
-Stripe
+---
 
-Payments, Refunds, Metadata
+## Versioning
 
-PayPal
+This package uses [semantic versioning](https://semver.org/). Each release is tagged in the format `vX.Y.Z`.
 
-Payments, Refunds
+---
 
-Razorpay
+## License
 
-Payments, Refunds, Verification
+This package is open-source and available under the [MIT License](LICENSE).
 
-Versioning
+---
 
-This package uses semantic versioning. Each release is tagged in the format vX.Y.Z.
+## Contributions
 
-License
+Contributions are welcome! Open an issue or submit a pull request on the [GitHub repository](https://github.com/amanbora856/npm-payment-package).
 
-This package is open-source and available under the MIT License.
+---
 
-Contributions
+## Support
 
-Contributions are welcome! Open an issue or submit a pull request on the GitHub repository.
+For any questions or issues, visit the [GitHub Issues](https://github.com/amanbora856/npm-payment-package/issues) page or contact the repository maintainer.
 
-Support
-
-For any questions or issues, visit the GitHub Issues page or contact me
